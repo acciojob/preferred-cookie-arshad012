@@ -9,11 +9,12 @@ document.querySelector('form').addEventListener('submit', () => {
 })
 
 window.onload = () => {
-	// const root = document.querySelector(':root');
 	const styles = JSON.parse(localStorage.getItem('cookies'));
-	const body = document.querySelector('body');
-	body.style.color = styles.color;
-	body.style.fontSize = styles.size + 'px';
+	if(styles) {
+		const body = document.querySelector('body');
+		body.style.color = styles.color;
+		body.style.fontSize = styles.size + 'px';
+	}
 }
 
 
